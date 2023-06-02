@@ -14,3 +14,9 @@ def get_filtered_data(data, filter_empty_from=False):
     if filter_empty_from:
         data = [d for d in data if 'from' in d]
     return data
+
+
+def get_last_values(data, count_last_values):
+    data = sorted(data, key=lambda x: x['date'], reverse=True)
+    data = data[:count_last_values]
+    return data
