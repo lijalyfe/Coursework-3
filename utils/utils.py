@@ -36,7 +36,7 @@ def get_formatted_data(data):
         if 'from' in row:
             sender = row['from'].split()
             from_bill = sender.pop(-1)
-            from_bill = f"{from_bill[-4]} {from_bill[4:6]}** **** {from_bill[-4:]}"
+            from_bill = f"{from_bill[:4]} {from_bill[4:6]}** **** {from_bill[-4:]}"
             from_info = ''.join(sender)
         else:
             from_info, from_bill = '', ''
